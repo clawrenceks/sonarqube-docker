@@ -15,8 +15,7 @@ COPY Start.ps1 /
 RUN Invoke-WebRequest $env:sonarqube_download_url -OutFile '/SonarQube.zip' -UseBasicParsing ; \
     Expand-Archive -Path '/SonarQube.zip' -Destination '/SonarQubeTemp' ; \
     Move-Item -Path '/SonarQubeTemp/*' -Destination '/SonarQube' ; \
-    Copy-Item -Path C:\SonarQube\sonarqube-6.5\* -Destination C:\sonarqube\ -Exclude .\sonarqube-6.5\extensions\plugins\* -Recurse -Force ; \
-    Remove-Item '/SonarQube/sonarqube-6.5'  -Force -Recurse ; \
+	Remove-Item -Path '/SonarQube/extensions/plugins' -Recurse -Force; \
     Remove-Item -Force -Recurse '/SonarQubeTemp' ; \
     Remove-Item -Force '/SonarQube.zip' ;
 
