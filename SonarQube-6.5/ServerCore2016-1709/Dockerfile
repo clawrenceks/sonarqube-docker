@@ -8,8 +8,6 @@ ENV sonar_jdbc_password "!"
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
-VOLUME C:\\SonarQube\\extensions\\plugins
-
 EXPOSE 9000
 
 COPY Start.ps1 /
