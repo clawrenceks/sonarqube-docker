@@ -34,4 +34,9 @@ if ($sonar_jdbc_password -ne '!') {
     Add-Content -Path C:\SonarQube\conf\sonar.properties -Value "sonar.jdbc.password=${env:sonar_jdbc_password}"
 }
 
+if ((Test-Path -Path 'C:\SonarQube\extensions\plugins') -eq $false) {
+
+	New-Item -Path 'C:\SonarQube\extensions\plugins' -ItemType Directory
+}
+
 Start-Process C:\SonarQube\bin\windows-x86-64\StartSonar.bat -NoNewWindow -Wait
