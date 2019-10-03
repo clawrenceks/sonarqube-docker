@@ -1,6 +1,6 @@
-FROM openjdk:8u161-windowsservercore-1709
+FROM openjdk:8u222-windowsservercore-1809
 
-ENV sonarqube_download_url "https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-6.5.zip"
+ENV sonarqube_download_url "https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-6.5.zip"
 
 ENV sonar_jdbc_url "!"
 ENV sonar_jdbc_username "!"
